@@ -1,7 +1,7 @@
-.header-content {
+.header {
     width: 1230px;
     background-color: #000;
 }
-.header-content__title {
+.header__logo {
     color: #fff;
 }

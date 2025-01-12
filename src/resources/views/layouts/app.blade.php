@@ -9,20 +9,24 @@
     @yield('css')
 </head>
 <body>
-    <header class="header-content">
-        <div class = "header-content__title">
-            <h1>Todo</h1>
+    <header>
+        <div class="header">
+            <div class = "header__logo">
+                <a href="/"><h1>Todo</h1></a>
+                <nav class="header_nav">
+                    <a href="/categories">カテゴリ一覧</a>
+                </nav>
+            </div>
         </div>
 
-
 @if ($errors->any())<!-- エラー時のフラッシュメッセージの実装 -->
-    <div class="alert alert-danger text-center mx-auto w-75 mb-3">
+    <div class="alert alert-danger text-center">
         @foreach ($errors->all() as $error)
             <p>{{ $error }}</p>
         @endforeach
     </div>
 @elseif (session('greenMessage'))<!-- 処理成功のフラッシュメッセージの実装 -->
-    <div class="alert alert-success text-center mx-auto w-75 mb-3">
+    <div class="alert alert-success text-center">
         {{ session('greenMessage') }}
     </div>
 @endif
